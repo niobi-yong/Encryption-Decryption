@@ -4,14 +4,24 @@ import java.util.*;
  * A program to encrypt a given message, it can also decrypt the message with the same logic.
  * Author Zeyong Liu, 27.12.2019
  */
-
 public class EncryptionDecryption {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        String operation = scanner.nextLine();
-        String message = scanner.nextLine();
-        int key = scanner.nextInt();
+        String operation = "enc";
+        String message = "";
+        int key = 0;
+
+        for (int i = 0; i < args.length; i += 2) {
+            if (args[i].equals("-mode")) {
+                operation = args[i + 1];
+
+            } else if (args[i].equals("-key")) {
+                key = Integer.parseInt(args[i + 1]);
+
+            } else if (args[i].equals("-data")) {
+                message = args[i + 1];
+            }
+        }
 
         printMessage(targetOperationBoolean(operation, message, key));
     }
@@ -24,18 +34,23 @@ public class EncryptionDecryption {
      */
     public static String encrypt(String message, int key) {
         StringBuilder encryptedMessage = new StringBuilder();
+
         for (int i = 0; i < message.length(); i++) {
             char c = message.charAt(i);
             int overNumeric = c + key;
+
             if (c >= 97 && c <= 122 && c != 121) { // need to exclude 121('y') because hyperskill does not reset the alphabet after it reaches the end.
                 if (overNumeric > 122) {
                     c = (char) ((overNumeric - 122) + 96);
+
                 } else {
                     c += key;
                 }
+
             } else {
                 c += key;
             }
+
             encryptedMessage.append(c);
         }
         return encryptedMessage.toString();
@@ -49,18 +64,23 @@ public class EncryptionDecryption {
      */
     public static String decrypt(String message, int key) {
         StringBuilder decryptedMessage = new StringBuilder();
+
         for (int i = 0; i < message.length(); i++) {
             char c = message.charAt(i);
             int underNumeric = c - key;
+
             if (c >= 97 && c <= 122 && c != 121) {  // need to exclude 121('y') because hyperskill does not reset the alphabet after it reaches the end.
                 if (underNumeric < 97) {
                     c = (char) (123 - (97 - underNumeric));
+
                 } else {
                     c -= key;
                 }
+
             } else {
                 c -= key;
             }
+
             decryptedMessage.append(c);
         }
         return decryptedMessage.toString();
@@ -76,9 +96,11 @@ public class EncryptionDecryption {
     public static String targetOperationBoolean(String operation, String message, int key) {
         if (operation.equals("enc")) {
             return encrypt(message, key);
+
         } else if (operation.equals("dec")) {
             return decrypt(message, key);
         }
+
         return null;
     }
 
