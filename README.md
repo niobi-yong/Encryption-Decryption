@@ -11,11 +11,11 @@ add the following argument:
 
 This argument reads the file road_to_treasure.txt, encrypts it using the shift algorithm and writes it into the output.txt file. 
 
--alg    choose between the Unicode algorithm (https://www.utf8-zeichentabelle.de/unicode-utf8-table.pl?names=-&unicodeinhtml=hex) or the shift algorithm <br/>
--key    shifts the letter for the given number <br/>
-            shift algorithm W -> b, y -> d <br/>
-            unicode W -> \, y -> ~  <br/>
--in     the path of the input file  <br/>
--out    the path of the output file <br/>
--mode   2 modes enc for encryption, dec for decryption <br/>
--data   if not using file as input, you can directly write the message using this command
+<b>-alg</b>    choose between the Unicode algorithm (https://www.utf8-zeichentabelle.de/unicode-utf8-table.pl?names=-&unicodeinhtml=hex) or the shift algorithm <br/>
+<b>-key</b>    shifts the letter for the given number <br/>
+                        shift algorithm W -> b, y -> d <br/>
+                        unicode W -> \, y -> ~  <br/>
+<b>-in</b>     the path of the input file  <br/>
+<b>-out</b>    the path of the output file <br/>
+<b>-mode</b>   2 modes enc for encryption, dec for decryption <br/>
+<b>-data</b>   if not using file as input, you can directly write the message using this command
