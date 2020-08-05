@@ -7,7 +7,7 @@ I wrote the code in IntelliJ IDEA and used the "Edit Configurations" option to w
 In IntelliJ IDEA under RUN > Edit Configurations > Program arguments
 add the following argument:
 
-"-alg shift -mode enc -key 5 -in ../Files_to_be_read/road_to_treasure.txt -out ../Files_to_be_read/output.txt"
+<b>"-alg shift -mode enc -key 5 -in ../Files_to_be_read/road_to_treasure.txt -out ../Files_to_be_read/output.txt"</b>
 
 This argument reads the file road_to_treasure.txt, encrypts it using the shift algorithm and writes it into the output.txt file. 
 
