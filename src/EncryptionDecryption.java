@@ -71,7 +71,6 @@ public class EncryptionDecryption {
         if (outExist) {
             File fileOut = new File(fileOutPath);
             print.setPrintingMethod(new FilePrint(fileOut));
-
         } else {
             print.setPrintingMethod(new ConsolePrint());
         }
@@ -84,10 +83,7 @@ public class EncryptionDecryption {
     }
 
     /**
-     * reads a file
-     * @param fileName the file/directory
-     * @return the String of the file
-     * @throws IOException checked Exception
+     * reading the file
      */
     public static String readFileAsString(String fileName) throws IOException {
         return new String(Files.readAllBytes(Paths.get(fileName)));

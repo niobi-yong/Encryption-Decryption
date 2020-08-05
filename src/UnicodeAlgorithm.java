@@ -2,9 +2,6 @@ public class UnicodeAlgorithm implements Algorithm{
 
     /**
      * encrypts the message with a key. the key adds its value to the character and shifts it. ASCII Numeric Values
-     * @param message the message given from user
-     * @param key this decides how the message should be changed
-     * @return a encrypted message
      */
     @Override
     public String encrypt(String message, int key) {
@@ -32,9 +29,6 @@ public class UnicodeAlgorithm implements Algorithm{
 
     /**
      * decrypt the message with the logic how it was encrypted
-     * @param message the message given from user
-     * @param key this decides how the message should be changed
-     * @return a decrypted message
      */
     @Override
     public String decrypt(String message, int key) {

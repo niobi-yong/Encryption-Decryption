@@ -1,4 +1,4 @@
-public class ShiftAlgorithm implements Algorithm{
+public class ShiftAlgorithm implements Algorithm {
 
     @Override
     public String encrypt(String message, int key) {
